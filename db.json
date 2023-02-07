@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "12345678",
+      "name": "מנהל",
+      "isBussines": true,
+      "id": 1
+    },
+    {
+      "email": "yochi@gmail.com",
+      "password": "12345678",
+      "name": "Yochi",
+      "isBussines": true,
+      "id": 2
+    },
+    {
+      "email": "Mali@gmail.com",
+      "password": "12345678",
+      "name": "Yochi",
+      "isBussines": false,
+      "id": 3
+    }
+  ],
+  "cards": [
+    {
+      "name": "Sababa-Kids",
+      "Description": "אתר הצעצועים הזול בישראל!",
+      "Address": "https://www.sababakids.co.il/",
+      "phone": 170070080,
+      "image": "https://www.sababakids.co.il/wp-content/uploads/2020/05/sababakids_logo250_1.png",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "name": "Vardinon",
+      "Description": "אתר כלי הבית והטקסטיל המוביל בישראל ",
+      "Address": "https://www.vardinon.co.il/",
+      "phone": 1800800809,
+      "image": "https://www.vardinon.co.il/pub/media/idus/stores/1/varlogo.png",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "name": "Reabar",
+      "Description": "רשת משקאות לחייים בריאים ",
+      "Address": "https://rebar.co.il/",
+      "phone": 1599555999,
+      "image": "https://cdn-fohcn.nitrocdn.com/WOAYthLkytYxGXDVhonMWxpiWtNNUrwv/assets/images/optimized/rev-bf4f177/wp-content/uploads/2021/12/logo@1x.svg",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "name": "Lalin",
+      "Description": "ללין מוצרי טיפוח",
+      "Address": "https://www.laline.co.il/",
+      "phone": 170070055,
+      "image": "https://www.laline.co.il/assets/images/footer/lalinelogo.svg",
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "name": "KSP",
+      "Description": "כל עולם המחשוב",
+      "Address": "https://ksp.co.il/",
+      "phone": 159999999,
+      "image": "https://ksp.co.il/meNew/img/logos/computers_logo.png",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "name": "GOLF&CO",
+      "Description": "מותג עיצוב הבית המוביל ",
+      "Address": "https://www.golfco.co.il/",
+      "phone": 180080080,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuPNFmX-TMU4ObZ3ClREU1MlzmiB7HGbuQ0A&usqp=CAU",
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "name": "Cofix",
+      "Description": "רשת בתי קפה",
+      "Address": "https://cofix.co.il/",
+      "phone": 170070055,
+      "image": "https://cofix.co.il/wp-content/uploads/2020/11/LOGO-NEW.png",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "name": "Kravitz",
+      "Description": "ציוד משרדי וטכנולוגיה מתקדמת ",
+      "Address": "https://www.kravitz.co.il/",
+      "phone": 170070088,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZWTBoTFSwALtSAZWn0ABKotdHh9D6KJ3zOA&usqp=CAU",
+      "userId": 1,
+      "id": 8
+    }
+  ]
+}

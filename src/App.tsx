@@ -1,26 +1,71 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { ToastContainer } from "react-toastify";
+import Home from './components/Home';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Signin from './components/Signin';
+import Signup from './components/Signup';
+import Footer from './components/Footer';
+import About from './components/About';
+import Business from './components/Business';
+import NewCard from './components/NewCard';
+import { useState } from 'react';
+import AllCards from './components/AllCards';
+import MyCards from './components/MyCards';
+import Nav from './components/Nav';
 function App() {
+  let [isBussines, setIsBussines] = useState<boolean>(false);
+  let [isLoggedin, setIsLoggedin] = useState<boolean>(false);
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastContainer />
+      <Router>
+        <Nav isBussines={isBussines} isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin} />
+
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sign-in" element={<Signin setIsBussines={setIsBussines} setIsLoggedin={setIsLoggedin} />} />
+
+          <Route path="/sign-up" element={<Signup setIsLoggedin={setIsLoggedin} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/bussines" element={<Business setIsLoggedin={setIsLoggedin} setIsBussines={setIsBussines} />} />
+          <Route path="/new-card" element={<NewCard />} />
+          <Route path="/all-cards" element={<AllCards />} />
+          <Route path="/my-cards" element={<MyCards />} />
+
+
+        </Routes>
+        <Footer></Footer>
+      </Router>
+
+
+
+
+    </>
   );
 }
-
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
