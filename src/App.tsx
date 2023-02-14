@@ -9,11 +9,17 @@ import Footer from './components/Footer';
 import About from './components/About';
 import Business from './components/Business';
 import NewCard from './components/NewCard';
-import { useState } from 'react';
+
 import AllCards from './components/AllCards';
 import MyCards from './components/MyCards';
 import Nav from './components/Nav';
+import { createContext, useState } from "react";
+
+
+
+
 function App() {
+
   let [isBussines, setIsBussines] = useState<boolean>(false);
   let [isLoggedin, setIsLoggedin] = useState<boolean>(false);
 
@@ -21,6 +27,7 @@ function App() {
 
   return (
     <>
+
       <ToastContainer />
       <Router>
         <Nav isBussines={isBussines} isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin} />

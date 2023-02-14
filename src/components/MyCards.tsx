@@ -1,5 +1,6 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+
 import Card from "../interfaces/Card";
 import { getmyCards } from "../services/CardService";
 import DeleteCardModal from "./DeleteCardModal";
@@ -28,6 +29,7 @@ const MyCards: FunctionComponent<MyCardsProps> = () => {
 
     return (
         <>
+
             <h1 className="text-center" style={{ fontFamily: "Caveat", fontSize: "3rem" }}>My Cards</h1>
             {cards.length ? (
                 <div className="container">
@@ -82,6 +84,8 @@ const MyCards: FunctionComponent<MyCardsProps> = () => {
                 id={id}
                 refresh={refresh}
             />
+
+
         </>
     );
 };
