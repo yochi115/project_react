@@ -7,10 +7,12 @@ import { successMsg } from "../services/feedbacks";
 import { newUser } from "../services/UserService";
 interface SignupProps {
     setIsLoggedin: Function;
+    setIsBussines: Function;
 }
 
 const Signup: FunctionComponent<SignupProps> = ({
-    setIsLoggedin
+    setIsLoggedin,
+     setIsBussines
 }) => {
     let navigate = useNavigate();
     let formik = useFormik({
@@ -23,12 +25,18 @@ const Signup: FunctionComponent<SignupProps> = ({
         onSubmit: (values: User) => {
             newUser({ ...values, isBussines: false })
                 .then((res) => {
-                    navigate("/");
-                    successMsg("You registered successfully!");
-                    setIsLoggedin(true)
+                    navigate("/about");
+                    setIsLoggedin(true);
+                    setIsBussines(false);
                     sessionStorage.setItem(
-                        "userId",
-                        JSON.stringify({ userId: res.data[0].id })
+                        "userDatas",
+                        JSON.stringify({
+                            isLoggedin: true,
+                            token: res.data,
+                        })
+                    );
+                    successMsg(
+                        `Hello ${res.data.name}, you have successfully registered`
                     );
                 })
                 .catch((err) => console.log(err));

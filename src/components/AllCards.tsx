@@ -28,7 +28,7 @@ const AllCards: FunctionComponent<AllCardsProps> = () => {
 
 
                         < div
-                            key={card.id}
+                            key={card._id}
                             className="card ms-4 col-md-4 mt-3" style={{ width: "18rem", height: "24rem" }}  >
                             <img src={card.image}
                                 className="card-img-top"

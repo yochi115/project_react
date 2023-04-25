@@ -5,7 +5,7 @@ import UpdateCard from "./UpdateCard";
 interface UpdateCardMaodlProps {
     show: boolean;
     onHide: Function;
-    id: number;
+    id: string;
     refresh: Function;
 }
 

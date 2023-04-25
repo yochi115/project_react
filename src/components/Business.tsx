@@ -26,13 +26,17 @@ const Business: FunctionComponent<BusinessProps> = ({
         onSubmit: (values: User) => {
             newUser({ ...values, isBussines: true })
                 .then((res) => {
-                    navigate("/");
+                    navigate("/about");
                     successMsg("You registered successfully!");
                     setIsLoggedin(true)
                     setIsBussines(true)
                     sessionStorage.setItem(
-                        "userId",
-                        JSON.stringify({ userId: res.data[0].id })
+                        "userDatas",
+                        JSON.stringify({
+                            isLoggedin: true,
+                        
+                            token: res.data,
+                        })
                     );
                 })
                 .catch((err) => console.log(err));

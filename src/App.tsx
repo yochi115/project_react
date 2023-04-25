@@ -37,7 +37,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<Signin setIsBussines={setIsBussines} setIsLoggedin={setIsLoggedin} />} />
 
-          <Route path="/sign-up" element={<Signup setIsLoggedin={setIsLoggedin} />} />
+          <Route path="/sign-up" element={<Signup setIsLoggedin={setIsLoggedin} setIsBussines={setIsBussines} />} />
           <Route path="/about" element={<About />} />
           <Route path="/bussines" element={<Business setIsLoggedin={setIsLoggedin} setIsBussines={setIsBussines} />} />
           <Route path="/new-card" element={<NewCard />} />

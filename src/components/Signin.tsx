@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import User from "../interfaces/User";
 import { checkUser } from "../services/UserService";
+import jwt_decode from "jwt-decode";
 interface SigninProps {
     setIsBussines: Function;
     setIsLoggedin: Function;
@@ -18,23 +19,35 @@ const Signin: FunctionComponent<SigninProps> = ({ setIsBussines, setIsLoggedin }
             email: yup.string().required().email().min(5),
             password: yup.string().required().min(8),
         }),
-        onSubmit: (values: User) => {
-
-            checkUser(values)
+        onSubmit: (user: User) => {
+            checkUser(user)
                 .then((res) => {
-                    if (res.data.length) {
-                        navigate("/");
 
-                        sessionStorage.setItem("userType", JSON.stringify({ isBussines: res.data[0].isBussines }))
-                        sessionStorage.setItem("userId", JSON.stringify({ userId: res.data[0].id }))
-                        setIsBussines(res.data[0].isBussines);
-                        setIsLoggedin(true);
-                    }
+                    sessionStorage.setItem(
+                        "userDatas",
+                        JSON.stringify({
+                            isLoggedIn: true,
+                            token: res.data,
+                        })
+                    );
+
+
+
+                    setIsLoggedin(true);
+                    const tokenDecoded: { isBussines: boolean } = jwt_decode(res.data);
+                    setIsBussines(tokenDecoded.isBussines);
+
+
+                   
+                    navigate("/about");
                 })
-                .catch((err) => console.log(err));
+                .catch((err) => {
+                    navigate("/");
+                    console.log(err);
+                });
         },
+     
     });
-
     return (
         <>
             <div className="container  mt-3 text-center">

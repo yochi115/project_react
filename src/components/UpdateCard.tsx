@@ -10,7 +10,7 @@ import { successMsg } from "../services/feedbacks";
 
 interface UpdateCardProps {
     onHide: Function;
-    id: number;
+    id: string;
     refresh: Function;
 }
 

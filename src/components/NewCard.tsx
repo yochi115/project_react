@@ -28,18 +28,13 @@ const NewCard: FunctionComponent<NewCardProps> = () => {
 
         }),
         onSubmit: (values: Card) => {
-
-
-            values.userId = JSON.parse(sessionStorage.getItem("userId") as string).userId;
-
             createCard(values)
                 .then(() => {
-                    navigate("/");
-                    successMsg("Card added successfully!");
+                    navigate("/all-cards");
+                    successMsg("Your Card created successfully");
                 })
                 .catch((err) => console.log(err));
-
-        }
+        },
 
     })
     useEffect(() => {
