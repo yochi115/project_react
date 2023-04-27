@@ -47,7 +47,7 @@ const UpdateCard: FunctionComponent<UpdateCardProps> = ({
 
         }),
         onSubmit: (values: Card) => {
-            values.userId = JSON.parse(sessionStorage.getItem("userId") as string).userId;
+           
             updatecard(id, values)
                 .then(() => {
                     onHide();
