@@ -16,13 +16,13 @@ const NewCard: FunctionComponent<NewCardProps> = () => {
     let navigate = useNavigate()
     let formik = useFormik({
         initialValues: {
-            name: "", Description: "", Address: "", phone: 0, image: "",
+            name: "", Description: "", Address: "", phone: "", image: "",
         },
         validationSchema: yup.object({
             name: yup.string().required().min(2),
             Description: yup.string().required().min(2),
             Address: yup.string().required().min(2),
-            phone: yup.number().required().min(8),
+            phone: yup.string().required().min(8),
             image: yup.string().required().min(2),
 
 

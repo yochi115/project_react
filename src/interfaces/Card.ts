@@ -3,7 +3,7 @@ export default interface Card{
     name:string;
     Description:string;
     Address:string;
-    phone:number;
+    phone:string;
     image:string;
     userId?:string;
 }

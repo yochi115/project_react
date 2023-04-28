@@ -1,5 +1,5 @@
 import axios from "axios";
-import { number } from "yup";
+
 import DeleteCardModal from "../components/DeleteCardModal";
 import Card from "../interfaces/Card";
 
@@ -26,6 +26,17 @@ export function getAllCards(){
     },
   });
 
+}
+
+export function getCardById(id: string) {
+  return axios.get(`${api}/cards/${id}`,
+  {
+     headers: {
+      Authorization: JSON.parse(sessionStorage.getItem("userDatas") as string)
+        .token,
+    },
+  }
+  );
 }
 
 export function getmyCards(userId: string) {
@@ -60,7 +71,5 @@ export function updatecard(id: string, updatecard: Card) {
 
 
 
-export function getCardById(id: string) {
-  return axios.get(`${api}/${id}`);
-}
+
 

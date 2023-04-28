@@ -24,16 +24,16 @@ const UpdateCard: FunctionComponent<UpdateCardProps> = ({
     //let crd =  getCardById(id);
 
 
-    
 
-     
 
-    let navigate = useNavigate()
+
+
+
     let [card, setCard] = useState<Card>({
         name: "",
         Description: "",
         Address: "",
-        phone:0,
+        phone: "",
         image: "",
 
     });
@@ -42,7 +42,7 @@ const UpdateCard: FunctionComponent<UpdateCardProps> = ({
         getCardById(id)
             .then((res) => setCard(res.data))
             .catch((err) => console.log(err));
-    }, [id]);
+    }, []);
 
     let formik = useFormik({
         initialValues: {
@@ -57,13 +57,13 @@ const UpdateCard: FunctionComponent<UpdateCardProps> = ({
             name: yup.string().required().min(2),
             Description: yup.string().required().min(2),
             Address: yup.string().required().min(2),
-            phone: yup.number().required().min(8),
+            phone: yup.string().required().min(8),
             image: yup.string().required().min(2),
 
 
         }),
         onSubmit: (values: Card) => {
-           
+
             updatecard(id, values)
                 .then(() => {
                     onHide();
@@ -144,7 +144,7 @@ const UpdateCard: FunctionComponent<UpdateCardProps> = ({
                             </div>
                             <div className="form-floating mb-3">
                                 <input
-                                    type="number"
+                                    type="text"
                                     className="form-control"
                                     id="floatingphone"
                                     placeholder="Bussines phone"
