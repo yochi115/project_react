@@ -1,19 +1,22 @@
 import { FunctionComponent } from "react";
 import { Modal } from "react-bootstrap";
 import UpdateCard from "./UpdateCard";
+import Card from "../interfaces/Card";
+
 
 interface UpdateCardMaodlProps {
     show: boolean;
     onHide: Function;
     id: string;
     refresh: Function;
+
 }
 
 const UpdateCardModal: FunctionComponent<UpdateCardMaodlProps> = ({
     show,
     onHide,
     id,
-    refresh,
+    refresh
 }) => {
     return (<>
         <Modal

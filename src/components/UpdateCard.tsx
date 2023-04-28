@@ -8,6 +8,7 @@ import Card from "../interfaces/Card";
 import { getCardById, updatecard } from "../services/CardService";
 import { successMsg } from "../services/feedbacks";
 
+
 interface UpdateCardProps {
     onHide: Function;
     id: string;
@@ -17,17 +18,32 @@ interface UpdateCardProps {
 const UpdateCard: FunctionComponent<UpdateCardProps> = ({
     onHide,
     id,
-    refresh,
+    refresh
 }) => {
+
+    //let crd =  getCardById(id);
+
+
+    
+
+     
+
     let navigate = useNavigate()
     let [card, setCard] = useState<Card>({
         name: "",
-        Description: "0",
+        Description: "",
         Address: "",
-        phone: 0,
+        phone:0,
         image: "",
 
     });
+
+    useEffect(() => {
+        getCardById(id)
+            .then((res) => setCard(res.data))
+            .catch((err) => console.log(err));
+    }, [id]);
+
     let formik = useFormik({
         initialValues: {
             name: card.name,
@@ -58,12 +74,12 @@ const UpdateCard: FunctionComponent<UpdateCardProps> = ({
         },
     });
 
-    useEffect(() => {
-        formik.setFieldValue("phone", "");
-        getCardById(id)
-            .then((res) => setCard(res.data))
-            .catch((err) => console.log(err));
-    }, []);
+    // useEffect(() => {
+    //     formik.setFieldValue("phone", "");
+    //     getCardById(id)
+    //         .then((res) => setCard(res.data))
+    //         .catch((err) => console.log(err));
+    // }, []);
 
 
 

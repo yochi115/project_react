@@ -17,6 +17,9 @@ const MyCards: FunctionComponent<MyCardsProps> = () => {
     let [cardChange, setCardChange] = useState<boolean>(false);
     let [openUpdateModal, setopenUpdateModal] = useState<boolean>(false);
     let [userId, setuserId] = useState<string>("");
+    let [selectedCard, setSelectedCard] = useState<Card | undefined>(undefined);
+
+
     let refresh = () => {
         setCardChange(!cardChange);
     };
@@ -86,6 +89,9 @@ const MyCards: FunctionComponent<MyCardsProps> = () => {
                                             onClick={() => {
                                                 setopenUpdateModal(true);
                                                 setId(card._id as string);
+                                                let crd = cards.find(crd => crd._id === id);
+                                                setSelectedCard(crd)
+
                                             }}
                                         >
                                             {" "}
