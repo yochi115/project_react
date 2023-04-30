@@ -74,12 +74,6 @@ const UpdateCard: FunctionComponent<UpdateCardProps> = ({
         },
     });
 
-    // useEffect(() => {
-    //     formik.setFieldValue("phone", "");
-    //     getCardById(id)
-    //         .then((res) => setCard(res.data))
-    //         .catch((err) => console.log(err));
-    // }, []);
 
 
 
